@@ -45,7 +45,7 @@
                 <a href="mailto:<%= @email.from %>" style="color: #5b8fb1;"><%= @email.from %></a>
               </h5>
             </td>
-            <td align="right"><%= image_tag @base_url + "/images/mailer/postmark.png", :alt => Spree::Config[:site_name], :style => "margin-right: -50px;" %></td>
+            <td align="right"><%= image_tag(@base_url + '/images/mailer/postmark.png', :alt => Spree::Config[:site_name], :style => "margin-right: -50px;") %></td>
           </tr>
         </table>
       </td>
