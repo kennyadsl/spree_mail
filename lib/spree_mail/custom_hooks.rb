@@ -15,6 +15,7 @@ module SpreeMail
     
     insert_after :footer_left,  'hooks/footer_left'
     insert_after :admin_tabs,   'admin/hooks/subscribers_tab'
+    insert_after :signup_below_password_fields, 'hooks/signup_checkbox'
 
   end
 end

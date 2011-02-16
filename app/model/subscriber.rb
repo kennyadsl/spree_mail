@@ -2,10 +2,9 @@ class Subscriber < ActiveRecord::Base
 
   attr_protected :token
   
-  scope :active, where("unsubscribed_at IS NULL").order(:name)
-  scope :unsubscribed, where("unsubscribed_at IS NOT NULL").order(:name)
+  scope :active, where("unsubscribed_at IS NULL").order(:updated_at)
+  scope :unsubscribed, where("unsubscribed_at IS NOT NULL").order(:unsubscribed_at)
   
-  validates :name,  :presence => true
   validates :email, :email => true, :uniqueness => true
   
   before_create :set_token
