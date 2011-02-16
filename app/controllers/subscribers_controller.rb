@@ -17,7 +17,7 @@ class SubscribersController < Spree::BaseController
     @subscriber = Subscriber.new(params[:subscriber])
     if @subscriber.valid? && @subscriber.save
       flash[:notice] = I18n.t( :subscribe_thanks)
-      redirect_to new_subscriber_path
+      redirect_to :root
     else
       flash[:error] = I18n.t( :subscribe_failed)
       render :action => 'new'

@@ -14,6 +14,7 @@ module SpreeMail
     #insert_after :admin_orders_index_search,  'admin/hooks/admin_orders_index_search'
     
     insert_after :footer_left,  'hooks/footer_left'
+    insert_after :footer_right,  'hooks/footer_right'
     insert_after :admin_tabs,   'admin/hooks/subscribers_tab'
     insert_after :signup_below_password_fields, 'hooks/signup_checkbox'
 
