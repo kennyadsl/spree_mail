@@ -60,17 +60,11 @@ class Email < ActiveRecord::Base
   
     def template
       txt=<<TXT
-Hello {{name}},
-  
 
-  
-Regards,
 
-#{Spree::Config[:site_name]}
-    
 TXT
     end
-    
+
     
   end
 

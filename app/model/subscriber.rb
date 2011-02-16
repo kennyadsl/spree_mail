@@ -2,8 +2,8 @@ class Subscriber < ActiveRecord::Base
 
   attr_protected :token
   
-  scope :active, where("unsubscribed_at IS NULL").order(:updated_at)
-  scope :unsubscribed, where("unsubscribed_at IS NOT NULL").order(:unsubscribed_at)
+  scope :active, where("unsubscribed_at IS NULL").order("updated_at DESC")
+  scope :unsubscribed, where("unsubscribed_at IS NOT NULL").order("unsubscribed_at DESC")
   
   validates :email, :email => true, :uniqueness => true
   
