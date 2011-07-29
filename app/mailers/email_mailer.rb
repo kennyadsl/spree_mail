@@ -16,7 +16,7 @@ class EmailMailer < ActionMailer::Base
     unless @email.nil? || @email_subject.empty? || @text.empty?
       mail(:to => @subscriber.email, :from => @email.from, :subject => @email_subject) do |format|
         format.text { render :text   => @text }
-        format.html { render :layout => 'email', :text => simple_format(@text) }
+        format.html { render :layout => 'email', :text => @text }
       end
     end
   end
