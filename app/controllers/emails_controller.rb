@@ -13,7 +13,7 @@ class EmailsController < Spree::BaseController
     @text          = @email.render(:body,    @subscriber)
     @base_url      = "http://#{Spree::Config[:site_url]}"
     
-    render :layout => 'email', :text => simple_format(@text)    
+    render :layout => 'email', :text => @text    
   end
   
 end
