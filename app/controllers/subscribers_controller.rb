@@ -16,6 +16,7 @@ class SubscribersController < Spree::BaseController
   def create
     @subscriber = Subscriber.new(params[:subscriber])
     if @subscriber.valid? && @subscriber.save
+      @subscriber.send_welcome_email
       flash[:notice] = I18n.t( :subscribe_thanks)
       redirect_to :root
     else

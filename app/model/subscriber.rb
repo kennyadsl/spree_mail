@@ -28,11 +28,16 @@ class Subscriber < ActiveRecord::Base
   def email=(value)
     write_attribute :email, value.strip.downcase
   end
+  
+  def send_welcome_email
+    mail = EmailMailer.welcome_email(self)
+    mail.deliver!
+  end
     
   private
   
-    def set_token
-      write_attribute :token, Digest::SHA1.hexdigest(Time.now.to_s)
-    end
-  
+  def set_token
+    write_attribute :token, Digest::SHA1.hexdigest(Time.now.to_s)
+  end
+
 end

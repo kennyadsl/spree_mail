@@ -21,4 +21,9 @@ class EmailMailer < ActionMailer::Base
     end
   end
     
+  def welcome_email(subscriber)
+    subject = "#{Spree::Config[:site_name]} Benvenuto nella nostra Newsletter"
+    mail(:to => subscriber.email,
+         :subject => subject)
+  end
 end
